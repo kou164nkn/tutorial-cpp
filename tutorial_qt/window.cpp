@@ -1,4 +1,5 @@
 #include "window.hpp"
+#include "moc_window.hpp"
 
 #include <QApplication>
 #include <QPushButton>
@@ -9,11 +10,16 @@ QWidget(parent){
   setFixedSize(100, 50);
 
   // Create and position the button
-  button_ = new QPushButton("2nd button", this);
+  button_ = new QPushButton("button", this);
   button_->setGeometry(10, 10, 80, 30);
 
+  // ボタンが押された時にWindowクラスのchange_text()が呼ばれる
   connect(button_,
           SIGNAL(clicked()),
-          QApplication::instance(),
-          SLOT(quit()));
+          this,
+          SLOT(change_text()));
+}
+
+void Window::change_text() {
+  button_->setText("clicked")
 }

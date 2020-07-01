@@ -5,8 +5,10 @@
 
 int main(int argc, char **argv)
 {
+  // Qtのアプリケーションを作成
   QApplication app (argc, argv);
 
+  // Windowクラスからインスタンスを生成
   Window window;
 
   window.show();
