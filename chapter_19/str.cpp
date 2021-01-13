@@ -19,5 +19,5 @@ int main() {
 
   std::cout << "\"ABC\\0DEF\"" << std::endl;
   std::cout << R"("ABC\0DEF")" << std::endl; // R = raw string (エスケープ無しで使える)
-  std::cout << R"foo("ABC\0DEF)")foo" << std::endl;
+  std::cout << R"foo("ABC\0DEF)")foo" << std::endl; // => "ABC\0DEF)" 　foo( が外側の括弧と評価される
 }
